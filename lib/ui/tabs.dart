@@ -4,7 +4,6 @@ import '../core/models.dart';
 import '../core/nutrition.dart';
 import '../core/store.dart';
 import 'helpers.dart';
-import 'modules.dart';
 
 class DashboardTab extends StatelessWidget {
   const DashboardTab({super.key, required this.store});
@@ -262,7 +261,7 @@ class _PlannerTabState extends State<PlannerTab> {
       ...plans.map((p) => Card(child: ListTile(
         title: Text('${t(context, p.meal)} — ${widget.store.findFood(p.foodId)?.name ?? p.foodId}'),
         subtitle: Text('${fmt(context, p.grams)} g'),
-        trailing: Wrap(mainAxisSize: MainAxisSize.min, children: [
+        trailing: Wrap(children: [
           IconButton(tooltip: t(context, 'logPlan'), icon: const Icon(Icons.check), onPressed: () => perform(context, () => widget.store.logPlan(p))),
           IconButton(tooltip: t(context, 'delete'), icon: const Icon(Icons.delete_outline), onPressed: () => perform(context, () => widget.store.removePlan(p.id))),
         ]),

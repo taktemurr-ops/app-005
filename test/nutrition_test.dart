@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kalori_360/core/catalog.dart';
-import 'package:kalori_360/core/models.dart';
 import 'package:kalori_360/core/nutrition.dart';
 
 void main() {
